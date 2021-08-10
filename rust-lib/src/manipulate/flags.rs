@@ -18,7 +18,7 @@ use winapi::{
         }
     },
     um::winuser::{
-        GetActiveWindow,
+        GetForegroundWindow,
         SetWindowLongW,
         GetWindowLongW,
         GetWindowRect,
@@ -178,5 +178,5 @@ pub fn push_changes(hwnd: HWND) -> BOOL {
 }
 
 pub fn get_active_window() -> HWND {
-    unsafe { GetActiveWindow() }
+    unsafe { GetForegroundWindow() }
 }
